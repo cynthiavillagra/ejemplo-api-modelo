@@ -1,10 +1,24 @@
 <!DOCTYPE html>
+<!-- ==================================================================
+     index.html · LA ESTRUCTURA DE LA PÁGINA (el frontend)
+     ------------------------------------------------------------------
+     Solo define QUÉ hay en la página: un formulario con 4 campos,
+     un botón y un lugar para mostrar el resultado.
+     El aspecto está en styles.css y el comportamiento en los dos .js.
+     Esta página NO tiene el modelo: le pide la predicción a la API.
+     Se abre con Live Server (clic derecho → "Open with Live Server").
+     ================================================================== -->
 <html lang="es">
 <head>
+  <!-- Para que los acentos y la ñ se vean bien -->
   <meta charset="UTF-8">
+  <!-- Para que la página se adapte a la pantalla del celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Predecir especie</title>
+  <!-- Conecta la hoja de estilos -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Los dos scripts. "defer" = ejecutarlos recién cuando toda la página está cargada.
+       El orden importa: primero cliente.js, porque script.js usa su función predecirEspecie(). -->
   <script src="cliente.js" defer></script>
   <script src="script.js" defer></script>
 </head>
@@ -13,6 +27,10 @@
     <h1>¿Qué especie de iris es?</h1>
     <p class="ayuda">Ingresá las 4 medidas de la flor, en centímetros.</p>
 
+    <!-- El formulario. script.js lo busca por su id="flor-form".
+         Cada <input> tiene un id que script.js usa para leer su valor.
+         type="number" → solo deja escribir números · step="0.1" → acepta un decimal
+         min="0.1" → no deja poner cero ni negativos · required → no se puede dejar vacío -->
     <form id="flor-form">
       <div class="campos">
         <label for="largo_sepalo">Largo del sépalo
@@ -31,6 +49,8 @@
       <button type="submit">Predecir</button>
     </form>
 
+    <!-- Acá script.js escribe la respuesta del modelo.
+         role="status" y aria-live hacen que un lector de pantalla anuncie el resultado. -->
     <div id="resultado" role="status" aria-live="polite"></div>
   </main>
 </body>

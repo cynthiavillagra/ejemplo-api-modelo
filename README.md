@@ -25,3 +25,20 @@ La documentación interactiva queda en http://localhost:8000/docs
 Para probar solo el modelo, sin la API: `python prediccion.py`
 
 > El modelo se entrenó con scikit-learn 1.7.2; por eso esa versión está fijada en `requirements.txt`.
+
+## Qué leer primero
+
+1. `backend/prediccion.py`: la lógica del modelo (Python puro)
+2. `backend/rutas/prediccion.py`: el endpoint `POST /predecir` y la validación
+3. `backend/main.py`: la aplicación, CORS y el enchufe de las rutas
+4. `frontend/cliente.js`: el `fetch` que llama a la API
+5. `frontend/script.js`: el formulario y cómo se muestra el resultado
+
+El modelo se entrena en el repo `ejemplo-modelo-sklearn` (`entrenar.py`).
+
+## Dos versiones del mismo código
+
+| Rama | Para qué |
+|---|---|
+| `main` | Código con comentarios mínimos (el que se escribe en clase) |
+| `alumnos` | El mismo código comentado paso a paso, para estudiar |
