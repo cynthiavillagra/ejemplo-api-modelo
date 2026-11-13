@@ -15,6 +15,12 @@ def raiz():
     return {"mensaje": "La API del modelo está funcionando"}
 
 
+# Chequeo de salud: la nube (Render, etc.) lo consulta para saber si la API responde
+@app.get("/health")
+def health():
+    return {"estado": "ok"}
+
+
 # CORS: permite que el frontend (en otro origen) llame a la API
 app.add_middleware(
     CORSMiddleware,

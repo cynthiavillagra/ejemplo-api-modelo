@@ -2,10 +2,11 @@
 
 Un formulario (frontend) envía las 4 medidas de una flor a una API hecha con FastAPI (backend), que le pide la predicción a un modelo de Regresión Logística entrenado con el dataset Iris.
 
-## Endpoint
+## Endpoints
 
 | Método | Ruta | Qué hace |
 |---|---|---|
+| GET | `/health` | Devuelve `{"estado": "ok"}` si la API está funcionando |
 | POST | `/predecir` | Recibe `{"largo_sepalo": 5.1, "ancho_sepalo": 3.5, "largo_petalo": 1.4, "ancho_petalo": 0.2}` y devuelve la especie y las probabilidades |
 
 ## Cómo correrlo
