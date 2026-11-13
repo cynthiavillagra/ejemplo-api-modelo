@@ -37,6 +37,16 @@ def raiz():
     return {"mensaje": "La API del modelo está funcionando"}   # FastAPI convierte el diccionario en JSON
 
 
+# PASO 3b · El chequeo de salud (health check)
+# Es una convención: casi todas las APIs publicadas tienen un GET /health.
+# Las plataformas en la nube (Render, Hugging Face, etc.) lo consultan cada
+# tanto para saber si tu API sigue viva; si no responde, la reinician.
+# No hace nada con el modelo: solo contesta "estoy bien".
+@app.get("/health")
+def health():
+    return {"estado": "ok"}
+
+
 # PASO 4 · Configurar CORS
 # El navegador bloquea, por seguridad, que una página le pida datos a un
 # servidor de OTRO origen (otro dominio o puerto). Nuestro frontend se abre
