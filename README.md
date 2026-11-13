@@ -40,5 +40,5 @@ El modelo se entrena en el repo `ejemplo-modelo-sklearn` (`entrenar.py`).
 
 | Rama | Para qué |
 |---|---|
-| `main` | Código con comentarios mínimos (el que se escribe en clase) |
-| `alumnos` | El mismo código comentado paso a paso, para estudiar |
+| `main` | El código comentado paso a paso, para estudiar |
+| `clase` | El mismo código con comentarios mínimos (el que se escribe en clase) |
