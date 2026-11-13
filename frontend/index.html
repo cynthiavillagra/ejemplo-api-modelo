@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predecir especie</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="cliente.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>¿Qué especie de iris es?</h1>
+    <p class="ayuda">Ingresá las 4 medidas de la flor, en centímetros.</p>
+
+    <form id="flor-form">
+      <div class="campos">
+        <label for="largo_sepalo">Largo del sépalo
+          <input id="largo_sepalo" name="largo_sepalo" type="number" step="0.1" min="0.1" value="5.1" required>
+        </label>
+        <label for="ancho_sepalo">Ancho del sépalo
+          <input id="ancho_sepalo" name="ancho_sepalo" type="number" step="0.1" min="0.1" value="3.5" required>
+        </label>
+        <label for="largo_petalo">Largo del pétalo
+          <input id="largo_petalo" name="largo_petalo" type="number" step="0.1" min="0.1" value="1.4" required>
+        </label>
+        <label for="ancho_petalo">Ancho del pétalo
+          <input id="ancho_petalo" name="ancho_petalo" type="number" step="0.1" min="0.1" value="0.2" required>
+        </label>
+      </div>
+      <button type="submit">Predecir</button>
+    </form>
+
+    <div id="resultado" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>

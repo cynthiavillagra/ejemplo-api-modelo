@@ -1,0 +1,5 @@
+uvicorn
+fastapi
+# Misma versión de scikit-learn con la que se entrenó el modelo
+scikit-learn==1.7.2
+joblib
